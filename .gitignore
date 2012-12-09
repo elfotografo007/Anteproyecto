@@ -8,3 +8,7 @@ main.log
 main.aux
 
 main.pdf
+
+main.out
+
+.DS_Store
