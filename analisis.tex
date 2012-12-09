@@ -1,5 +1,17 @@
 \chapter{Unidad de An\'alisis}
 \label{sec:analisis}
-
-
+\section{Estructura de la unidad de an\'alisis}
+La unidad de an\'alisis para este proyecto ser\'an los datos que son provistos por FourSquare referentes a los \textit{“check-ins”} realizados en la ciudad de Pereira.
+\section{Criterio de validez y confiabilidad}
+Para garantizar la confiabilidad de la informaci\'on recolectada, se tomar\'an las muestras despu\'es analizar el comportamiento normal de los usuarios de FourSquare en la ciudad de Pereira, seleccionando aquellos que tengan mayor cantidad de \textit{check-ins} en las \'ultimos 2 meses. Como el prototipo realiza sus procedimientos iguales siempre en cada una de sus ejecuciones, los resultados obtenidos al ejecutarlo con la misma muestra 2 o m\'as veces deben ser id\'enticos.
+\paragraph{}
+Teniendo como fin retornar un listado de personas que cumplen con  el perfil solicitado, se utilizar\'an par\'ametros para su identificaci\'on.
+\paragraph{}
+Los lugares georreferenciados se clasificar\'an en diferentes criterios de relaci\'on.
+\begin{itemize}
+\item El criterio con mayor importancia es aquel donde existe una actividad comercial id\'entica o parecida a la del perfil solicitado. 
+\item El segundo criterio est\'a constituido por lugares donde existen actividades complementarias que pueden realizar personas pertenecientes al perfil seleccionado.
+\item El tercer criterio est\'a constituido por lugares aleda\~nos a los lugares pertenecientes al primer criterio.
+\end{itemize}
+Con estos par\'ametros se garantiza la validez de contenido y criterio que se tiene en cuenta para generar el listado de personas que cumplen con un perfil seleccionado. Teniendo un resultado que contempla los anteriores par\'ametros se contactar\'a a las personas que seg\'un el prototipo encajen en dicho perfil para hacer la validaci\'on correspondiente.
 \pagebreak
