@@ -17,7 +17,7 @@ HootSuite es una herramienta de terceros para administrar Foursquare y dem\'as r
 ''La gesti\'on de Foursquare con HootSuite combina marketing social, servicio de localizaci\'on y juegos que animan a los m\'as populares a hacer \textit{''check in''} en lugares y cont\'arselo a sus amigos, compartir consejos, e incluso a convertirse en el ''alcalde'' de un lugar.''\footnote{Hoot Suite. Gesti\'on de redes sociales[Online]. Disponible en internet \textless http://hootsuite.com/features/social-networks\textgreater}
 
 \section{Marco Te\'orico}
-\subsection{\textit{Big Data}}
+\subsection{\textit{Big Data}}\footnote{ZIKOPOULOS PAUL et al. Understanding Big Data: Analytics for Enterprise Class Hadoop and Streaming Data. McGraw-Hill. 2012. pp. 3-31}
 \textit{Big Data} es un concepto muy de moda en los \'ultimos d\'ias. El t\'ermino hace referencia a la consulta, almacenamiento, recopilaci\'on, procesamiento, an\'alisis y administraci\'on de vol\'umenes exageradamente grandes de datos. Tambi\'en engloba la extracci\'on de informaci\'on valiosa y significativa de estas grandes cantidades de datos, al igual que proveer inteligencia y “conocimiento” a ra\'iz de los mismos. La definici\'on exacta de “vol\'umenes exageradamente grandes de datos” var\'ia en funci\'on del autor y la organizaci\'on o empresa que trabajo con estos datos. Para algunos \textit{Big Data} significa vol\'umenes superiores a 1TB, mientras que para otros es por el orden de los PB.
 \paragraph{}
 Generalmente, el enfoque de \textit{Big Data} es el an\'alisis de datos no estructurados, debido a que este tipo de datos son los que actualmente tienen el crecimiento m\'as r\'apido. Algunos de estos datos no estructurados pueden ser im\'agenes, datos de sensores, telemetr\'ia, videos, documentos, entre otros. Esto datos no tienen un modelo de datos estructurado predefinido, o simplemente no hay formas de adaptarlos bien a modelos estructurados o relacionales. Adicionalmente \textit{Big Data} intenta disminuir el tiempo que transcurre entre la adquisici\'on de los datos, y la aplicaci\'on del conocimiento o las decisiones basados en dichos datos, en especial en las \'areas de inteligencia de negocios. Tambi\'en busca brindar estas soluciones con costos relativamente bajos y que sean altamente escalables.
@@ -25,7 +25,7 @@ Generalmente, el enfoque de \textit{Big Data} es el an\'alisis de datos no estru
 Normalmente en el \textit{Data Warehouse} tradicional, los procesos y las depuraciones que sufren los datos son muy rigurosas, debido a la concepci\'on que los datos de Data Warehouse deben ser de una calidad elevada, ya que, los datos almacenados en \textit{Data Warehouse} se presumen son de alt\'isimo valor comercial. \textit{Big Data} toma un enfoque diferente, y asume un bajo valor comercial de los datos hasta que se demuestre lo contrario. Los costos de llevar todos los datos capturados por la empresa a \textit{Data Warehouse} son demasiado altos, mientras que en \textit{Big Data} son relativamente bajos. No se quiere indicar que \textit{Big Data} es mejor que el \textit{Data Warehouse} tradicional, ni que es un reemplazo (aunque podr\'ia serlo), se quiere hacer entender que pueden ser vistos
 como complementarios.
 \paragraph{}
-Seg\'un IBM\footnote{ZIKOPOULOS PAUL et al. Understanding Big Data: Analytics for Enterprise Class Hadoop and Streaming Data. McGraw-Hill. 2012. p. 5}, hay tres caracter\'isticas que definen \textit{Big Data}: volumen, variedad y velocidad. 
+Hay tres caracter\'isticas que definen \textit{Big Data}: volumen, variedad y velocidad. 
 \paragraph{}
 Las empresas est\'an enfrent\'andose a vol\'umenes masivos de datos, los cuales las est\'an abrumando. Adicionalmente, a nivel que la cantidad de datos disponibles para an\'alisis aumenta, el porcentaje de datos que se pueden procesar y analizar est\'a disminuyendo.
 \paragraph{}
@@ -34,7 +34,7 @@ La variedad de los datos se refiere a que en este momento solamente el 20\% de l
 La velocidad, m\'as que la tasa de entrada y generaci\'on de los datos, se refiere a que muchos datos deben ser procesados en tiempo real, y que ganar segundos, microsegundos o milisegundos en cuanto a su procesamiento puede significar una ventaja competitiva mayor. Al contrario del procesamiento tradicional de consultas donde se hace una consulta a un dato hist\'orico y se trabaja, \textit{Big Data} busca adicionalmente hacer una consulta continua, para obtener resultados actualizados continuamente.
 \paragraph{}
 El problema del \textit{Big Data} se ataca de dos formas: almacenamiento y procesamiento. Seg\'un los documentos, el problema del almacenamiento est\'a en su mayor\'ia resuelto, y se cuentan con distintos sistemas de archivos que cumplen esta tarea. El problema del procesamiento y an\'alisis todav\'ia tiene mucho campo por delante para investigar.
-\subsection{\textit{Map Reduce}}
+\subsection{\textit{Map Reduce}}\footnote{USENIX Association Berkeley [Online]. CA, USA:  Dean Jeffrey y  Ghemawat Sanjay. MapReduce: simplified data processing on large clusters. 2004 Disponible en internet \textless http://dl.acm.org/citation.cfm?id=1251264\textgreater}
 En el campo del an\'alisis de datos no estructurados, hay un \textit{framework} muy importante llamado \textit{MapReduce}, publicado por Google en 2004. \textit{MapReduce} se corre en dos fases: Mapeo y reducci\'on. Estas fases son funciones que reciben como entrada pares llave/valor, los procesan y entregan como resultado otro conjunto llave/valor.
 \paragraph{}
 El paradigma MapReduce, simplifica las operaciones al abstraer toda la operaci\'on de procesamiento a un conjunto de acciones \textit{“Map”} y \textit{“Reduce”} simples, encadenadas para producir un resultado. Lo m\'as atractivo de esto, es que el \textit{framework} que se utiliza para trabajar con MapReduce se encargar\'a de manejar toda la complejidad relacionada con la distribuci\'on de tareas, paralelizaci\'on, balanceo de carga, tolerancia a fallos del proceso.
@@ -42,9 +42,18 @@ El paradigma MapReduce, simplifica las operaciones al abstraer toda la operaci\'
 Un proyecto que se considera importante en el campo de \textit{Big Data} es Apache Hadoop, el cual es un proyecto de c\'odigo abierto que implementa los conceptos de Google sobre \textit{MapReduce}. Hadoop apunta a implementar un \textit{cluster} grande de nodos de bajo costo, que sea f\'acilmente escalable y pueda proveer cierto grado de tolerancia a fallos de los nodos.
 \paragraph{}
 Por el lado de la infraestructura de red, es necesario contar con una red que nos provea la redundancia requerida y que se pueda escalar a medida que el \textit{cluster} crece. Las conexiones de red son usadas en forma intensiva en las operaciones de lectura y escritura a los sistemas de archivos y en las distintas fases de los algoritmos de procesamiento y an\'alisis. La naturaleza del tr\'afico que circula en los \textit{cluster} de \textit{Big Data} es generalmente explosiva, por lo tanto es importante que la red pueda manejar esto y que adicionalmente tenga una buena profundidad de cola(\textit{buffer}), para evitar p\'erdidas de paquetes.
+\subsection{Motivaci\'on del consumidor}
+\begin{quote}
+Las necesidades humanas – necesidades del consumidor – son el fundamento de todo el marketing moderno. Las necesidades constituyen la esencia del concepto marketing. La clave de la supervivencia, la rentabilidad y el crecimiento de una compañ\'ia en un mercado altamente competitivo es su capacidad para identificar y satisfacer necesidades insatisfechas del consumidor mejor y m\'as r\'apido que la competencia.
+Los mercad\'ologos no crean las necesidades, aunque en algunos casos pueden hacer que los consumidores est\'en m\'as conscientes de necesidades que anteriormente no hab\'ian sentido.\footnote{SCHIFFMAN , Leon G. KANUK , Leslie L. El comportamiento del consumidor. Pearson Educacion (Agosto 2005). p. 85}
+\end{quote}
+\subsection{Motivaci\'on como una fuerza psicol\'ogica}
+\begin{quote}
+La motivaci\'on se define como la fuerza impulsora dentro de los individuos que los empuja a la acci\'on. Esta fuerza impulsora se genera por un estado de tensi\'on que existe como resultado de una necesidad insatisfecha. Los individuos se esfuerzan tanto consciente como subconscientemente por reducir dicha tensi\'on mediante un comportamiento que, seg\'un sus expectativas, satisfacer\'a sus necesidades y, de esa manera, mitigara el estr\'es que padecen. Las metas espec\'ificas que eligen y los patrones que realizan para alcanzar sus metas son resultado del pensamiento y el aprendizaje individual.\footnote{IBID. p. 87}
+\end{quote}
 \section{Marco Conceptual}
-\subsection{Georreferenciaci\'on}
-Por georreferenciaci\'on o geolocalizaci\'on se entiende la posici\'on de un objeto en un sistema de coordenadas geogr\'aficas.
+\subsection{Georreferenciaci\'on}\footnote{King, Kevin F., Geolocation and Federalism on the Internet: Cutting Internet Gambling’s Gordian Knot (July 14, 2009). Columbia Science and Technology Law Review, Vol. XI, 2010. p. 58}
+Por georreferenciaci\'on o geolocalizaci\'on se entiende la posici\'on de un objeto en un sistema de coordenadas geogr\'aficas, que identifican la localizaci\'on f\'isica de un usuario final de internet.
 \subsection{Fases \textit{Map} y \textit{Reduce}}
 En la fase de mapeo, se divide la carga de trabajo en cargas de trabajo m\'as peque\~nas, luego las procesa y finalmente las pasa a la siguiente fase. En la fase de reducci\'on se analiza y se mezcla la entrada de la fase anterior para producir la salida final del sistema. Esta salida es escrita en el sistema de archivos del cl\'uster.
 \subsection{Foursquare}
@@ -61,4 +70,8 @@ Ya sea que est\'es por viajar por el mundo, organizando una noche con amigos o t
 \item[Especiales:] Los especiales son recompensas que las personas pueden obtener por hacer \textit{check-in} en un negocio o evento.
 \item[Actualizaciones:] Las actualizaciones son mensajes que se pueden enviar desde las tiendas hacia los clientes
 \end{description}
+\subsection{Mercado objetivo}
+\begin{quote}
+El mercado objetivo hace alusi\'on al espacio del mercado que tienen en com\'un la oferta y la demanda. Comprende entre sus elementos m\'as importantes el alcance geogr\'afico, los canales de distribuci\'on, las categor\'ias de productos comerciados, el repertorio de competidores directos e indirectos, los t\'erminos de intercambio, y a los representantes de la demanda entre los que se encuentran influenciadores y prospectos compradores.\footnote{KOTLER, Philip.  Fundamentos de Marketing (6ª edici\'on). Pearson Educaci\'on de M\'exico. 2003. p. 123}
+\end{quote}
 \pagebreak
